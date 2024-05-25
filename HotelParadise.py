@@ -9,6 +9,7 @@ edad = 0
 numeroAcompanantes = 0
 admin = None
 passAdm = None
+edadIncorrecta = True
 
 while True:
     os.system("cls")
@@ -38,15 +39,18 @@ while True:
             while "@" not in correo:
                 correo = input("Correo electrónico\n")
 
-            edad = int(input("Edad\n"))
-            if edad < 18 and edad > 120:
-                edad = int(input("Ingresa edad entre 18 y 120 años\n"))
+            while edadIncorrecta:
+                try:
+                    edad = int(input("Edad\n"))
+                    if edad < 18 and edad > 120:
+                        edad = int(input("Ingresa edad entre 18 y 120 años\n"))
+                    edadIncorrecta = False
+                except:
+                    print("edad solo acepta numeros")
 
             numeroAcompanantes = int(input("Número de acompañantes\n"))
             if numeroAcompanantes <= 0:
-                numeroAcompanantes = int(
-                    input("Número de acompañantes debe ser minimo 1\n")
-                )
+                numeroAcompanantes = int(input("Número de acompañantes debe ser minimo 1\n"))
 
             print("******Reserva creada con exito******")
             next = input("Presione enter para continuar\n\n")
@@ -67,17 +71,11 @@ while True:
             while reservaIngresada < 1000 or reservaIngresada > 9999:
                 reservaIngresada = int(input("Ingresa un numero de reserva válido\n"))
             if reservaIngresada == numeroReserva:
-                print(
-                    f"Nombre Huesped: {nombreHuesped},\nDireccion: {direccion},\nCorreo: {correo},\nEdad: {edad}"
-                )
+                print(f"Nombre Huesped: {nombreHuesped},\nDireccion: {direccion},\nCorreo: {correo},\nEdad: {edad}")
                 if numeroAcompanantes > 3:
-                    print(
-                        f"Numero Acompañantes: {numeroAcompanantes} (Huesped con demasiados acompañantes)"
-                    )
+                    print(f"Numero Acompañantes: {numeroAcompanantes} (Huesped con demasiados acompañantes)")
                 else:
-                    print(
-                        f"Numero Acompañantes:{numeroAcompanantes} (Huesped dentro del limite de acompañantes)"
-                    )
+                    print(f"Numero Acompañantes:{numeroAcompanantes} (Huesped dentro del limite de acompañantes)")
             else:
                 print("Número de reserva no existe")
 
