@@ -1,51 +1,38 @@
-# aprendiendoPython
-Repositorio para guardar los ejercicios desarrollados con Python en clases de programación
-
-Hotel Paradise:
-El Hotel "Paradise Dreams" desea implementar un sistema informático para la gestión
-de sus huéspedes. A continuación, se detallan los requisitos para el desarrollo:
-Se te solicita crear un menú en el cual se puedan registrar los datos de un huésped. Los
-atributos que debe tener la ficha son los siguientes:
-Número de Reserva
-Nombre del huésped
+Un Centro Médico desea implementar un sistema informático para la atención de sus pacientes, y para ello, le solicitan a usted que desarrolle lo especificado a continuación ↓
+Se le solicita crear un menú en el cual se pueda registrar la ficha médica de un paciente, los atributos que debe tener la ficha son los siguientes:
+Rut, sin dígito verificador ni puntos.
+Nombre
 Dirección
-Correo electrónico
-Edad
-Número de acompañantes
+Correo
+Edad (número entero entre 0 y 110)
+Sexo, solo puede aceptar como caracteres las letras f o m
+Registros
+PS, acepta sólo que se ingrese Isapre o Fonasa (no es necesario especificar la Isapre)
 
-El menú debe tener las siguientes opciones:
+Centro Médico DUOC
 
-Sistema de Gestión de Huéspedes
-1) Registrar Huésped
-2) Consultar Datos de Huésped
-3) Salir
-Donde:
-Registrar Huésped: Solicita todos los datos de un huésped para hacer el registro de una
-nueva ficha. Cada uno de los atributos debe cumplir con lo solicitado mediante
-validación.
-- Nombre del huésped: no puede estar vacío.
-- Dirección: no puede estar vacía.
-- Número de Reserva: debe ser un número entero que se encuentre dentro del rango
-de 1000 y 9999.
-- Edad: debe ser un número entero que se encuentre en el rango de 18 a 120.
-- Correo electrónico: debe ser una cadena de caracteres que contenga al menos un
-carácter "@".
-- Número de acompañantes: debe ser un número entero mayor o igual a cero.
-Consultar Datos de Huésped:
-Muestra por pantalla todos los atributos del huésped que coincidan con el número de
-reserva ingresado. Los datos se deben mostrar de forma ordenada, utilizando
-herramientas de tabulación y/o saltos de línea según lo aprendido en clases (ver reglas
-de negocio más abajo).
-Salir:
-Sale del ciclo del menú y muestra un mensaje "Gracias por preferir Hotel 'Paradise
-Dreams' ".
-Reglas de negocio:
-Debe crearse un usuario y una contraseña para el administrador. Solo este usuario
-tiene permisos para visualizar la opción 2.
-- Ejemplo:
-- Usuario: seller
-- Contraseña: 123
-En el resumen (opción 2), deberá desplegarse toda la información del huésped y, si el
-número de acompañantes es superior a 3, el sistema deberá indicar 'huésped con
-demasiados acompañantes’; caso contrario, 'huésped dentro de límite de
-acompañantes'.
+1. Registrar Paciente
+2. Atención Paciente
+3. Gestionar Paciente
+4. Salir
+
+Donde Registrar Paciente solicite todos los datos de un paciente para hacer registro de una nueva ficha, cada uno de los atributos debe cumplir con lo solicitado (validación mediante ciclos), Rut debe ser un número entero que se encuentre dentro del rango de 5000000 y 99999999.
+Edad debe ser un número entero que se encuentre en el rango 0 y 110.
+Sexo debe ser un carácter que sólo acepta la letra f o m (mayúscula y minúscula).
+PS debe ser una cadena de caracteres que sólo acepta los valores “ISAPRE” y “FONASA”
+Correo Debe ser una cadena de caracteres que contenga al menos un carácter “@”, ejemplo → juan@lopez.
+
+Atención Paciente Deberá en primera instancia solicitar el Rut del paciente, luego verifica que el Paciente se encuentre registrado en el sistema, una vez validado se le solicitará ingresar la fecha y las observaciones de la visita, y lo concatenará con los registros anteriores con el nuevo registro.
+
+Consultar Datos Paciente :
+crear otro menú
+
+1. Consultar datos Paciente
+   EN ESTA OPCION, SE ESPERA QUE CONSULTE POR RUT, NOMBRE O ALGUN DATO VALIDO NO REPETITIVO, Y SI EXISTE QUE IMPRIMA TODA LA INFO DEL PACIENTE CONSULTADO
+2. Eliminar Paciente
+   SOLICITAR RUT, NOMBRE O DATO VALIDO NO REPETITIVO, Y SI EXISTE ELIMINARLO DE LA LISTA DE PACIENTES
+3. Modificar Paciente
+   SOLICITAR RUT, NOMBRE O DATO VALIDO NO REPETITIVO, Y SI EXISTE MODIFICAR ALGUNO DE SUS DATOS, MENOS EL RUT (RECUERDE QUE ES INMUTABLE)
+4. Regresar al menú principal
+
+Salir, debe salir del ciclo del menú y mostrar un mensaje “Ha salido del sistema…”
