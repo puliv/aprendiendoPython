@@ -1,21 +1,23 @@
 from functions import *
-import random
 
 while True:
-    showMenu()
+    mostrarMenu()
     try:
         option = int(input("Ingrese opcion\n"))
         if option == 1:
-            clearConsole()
+            limpiarTerminal()
             print("***Registrar Estudiante***")
-            registarEstudiante()
+            registrarEstudiante()
         elif option == 2:
-            print("2")
+            print("***Buscar Estudiante***")
+            buscarEstudiante()
         elif option == 3:
-            print("3")
+            print("***Imprimir Certificados***")
         elif option == 4:
-            print("4")
+            print("***Eliminar Estudiante***")
+        elif option == 5:
+            print("***Salir***")
         else:
-            print("opcion invalida")
+            print("opcion inválida")
     except:
-        print("Opcion invalida")
+        print("Opcion invalida except")
